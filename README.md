@@ -18,5 +18,6 @@ Android : 4.0  above
 
 # Features
 
-
+# SDK Change Log
+Check SDK [Change Log](CHANGELOG.txt)
 
