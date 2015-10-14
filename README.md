@@ -1,7 +1,7 @@
 
 #Demo App
-—Android Studio: Download package [demoapp_AS](demoapp_AS)
-—Eclipse: Download package [demoapp_eclipse](demoapp_eclipse)
+Android Studio: Download package [demoapp_AS](demoapp_AS)
+Eclipse: Download package [demoapp_eclipse](demoapp_eclipse)
 
 # Get Started
 
