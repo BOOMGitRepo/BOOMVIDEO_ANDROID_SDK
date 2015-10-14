@@ -60,6 +60,13 @@
             android:label="@string/app_name"
             android:hardwareAccelerated="true"
             android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name="com.boomvideo.vast.VastPlayer"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="SDKClient"
+            android:screenOrientation="landscape"
+
+            />
 
         <receiver android:name="com.boomvideo.handler.PackageListener">
             <intent-filter>

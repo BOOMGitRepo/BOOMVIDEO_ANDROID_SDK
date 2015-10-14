@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
+import com.boomvideo.framework.common.Logger;
+import com.boomvideo.framework.dto.ERROR_TYPE;
 import com.boomvideo.framework.dto.OperationResult;
 import com.boomvideo.videotracker.BoomVideoResourceManager;
 import com.boomvideo.videotracker.BoomVideoTrackerInf;
@@ -26,11 +28,14 @@ import com.boomvideo.videotracker.BoomVideoTrackerInf;
 
 public class HomeActivity extends Activity implements BoomVideoTrackerInf {
 
+    private static final String TAG = HomeActivity.class.getName();
+
     //private final String Boom_GUID = "e39970ec-34c6-41d8-90a1-2586bef04be9";
     //private final String Boom_GUID = "7a59cb93-b975-44f6-8add-508b602ba47c";
     //private final String Boom_GUID = "09fa348 8-2ea0-4ddb-af45-cbc2d7347c91";
     //private final String Boom_GUID = "9c6543a6-a41e-4657-9178-84210b22d794";
-    private final String Boom_GUID = "9c6543a6-a41e-4657-9178-84210b22d794";
+    private final String Boom_GUID = "27b55f7e-f75e-4d97-9b33-07f27a2856e5";
+
 
 
     @Override
@@ -95,7 +100,7 @@ public class HomeActivity extends Activity implements BoomVideoTrackerInf {
                     BoomVideoResourceManager boomVideoResourceManager = BoomVideoResourceManager
                             .getInstance();
                     boomVideoResourceManager.showVideoAds(Boom_GUID,
-                            HomeActivity.this, BoomVideoResourceManager.VIDEO_PLAYER_TYPE.OFFLIST);
+                            HomeActivity.this, BoomVideoResourceManager.VIDEO_PLAYER_TYPE.OFFERLIST);
                 }
             }
         });
@@ -143,132 +148,54 @@ public class HomeActivity extends Activity implements BoomVideoTrackerInf {
     public void onVideoTrackEvent(final OperationResult operationResult) {
         switch (operationResult.getResultMessages()) {
 
-            case UKNOWN_ERROR:
+            case AD_VIEW_LOADED:
+                //Toast.makeText(HomeActivity.this, "AD_VIEW_LOADED...", Toast.LENGTH_SHORT).show();
+                setLogs("AD_VIEW_LOADED...");
                 break;
-            case VIDEO_UNAVAILABLE:
-                // Toast.makeText(HomeActivity.this, "Video unavailable",
-                //        Toast.LENGTH_SHORT).show();
-                break;
-            case PLAYER_INITAILIZATION_ERROR:
-                // Toast.makeText(HomeActivity.this, "PLAYER_INITAILIZATION_ERROR",
-                //        Toast.LENGTH_SHORT).show();
-                break;
-            case VIDEO_FIRST_PLAY:
-                // Toast.makeText(HomeActivity.this, "VIDEO_FIRST_PLAY",
-                //        Toast.LENGTH_SHORT).show();
-                break;
-            case VIDEO_END_PLAY:
-                //Toast.makeText(HomeActivity.this, "VIDEO_END_PLAY",
-                //       Toast.LENGTH_SHORT).show();
-                break;
-
-            case ANNOTATION_CLICK:
-                //Toast.makeText(HomeActivity.this, "ANNOTATION_CLICK",
-                //       Toast.LENGTH_SHORT).show();
-
-                break;
-            case VIDEO_CALLBACK_FIRETIME_COMPLETED:
-                Toast.makeText(HomeActivity.this,
-                        "Congrats rewards gained :: " + operationResult.getPoints(),
-                        Toast.LENGTH_SHORT).show();
-
-                break;
-
-            case FACEBOOK_SHARE_COMPLETED:
-                // Toast.makeText(HomeActivity.this, "FACEBOOK_COMPLETED",
-                //         Toast.LENGTH_SHORT).show();
-                break;
-            case GOOGLE_SHARE_COMPLETED:
-                // Toast.makeText(HomeActivity.this, "GOOGLE_SHARE_COMPLETED",
-                //        Toast.LENGTH_SHORT).show();
-                break;
-            case TWITTER_SHARE_COMPLETED:
-                // Toast.makeText(HomeActivity.this, "TWITTER_SHARE_COMPLETED",
-                //       Toast.LENGTH_SHORT).show();
-                break;
-            case VIDEO_PAUSED:
-                // Toast.makeText(HomeActivity.this, "VIDEO_PAUSED",
-                //        Toast.LENGTH_SHORT).show();
-
-                break;
-
-            case INSTAGRAM_URL:
-
-                // Toast.makeText(HomeActivity.this,
-                //        "INSTAGRAM_SHARE_COMPLETED - " + operationResult.getPoints(),
-                //       Toast.LENGTH_SHORT).show();
-                break;
-
-            case SLIDESHARE_URL:
-                // Toast.makeText(HomeActivity.this,
-                //       "SLIDESHARE_URL - " + operationResult.getPoints(), Toast.LENGTH_SHORT)
-                //        .show();
-                break;
-            case SURVEY_COMPLETED:
-
-                //Toast.makeText(HomeActivity.this,
-                //       "SURVEY_CLICKED - " + operationResult.getPoints(), Toast.LENGTH_SHORT)
-                //      .show();
-                break;
-            case BLOG_URL:
-
-                Toast.makeText(HomeActivity.this, "BLOG_URL- " + operationResult.getPoints(),
-                        Toast.LENGTH_SHORT).show();
-                break;
-            case APP_INSTALLED:
-
-                //Toast.makeText(HomeActivity.this,
-                //      "APP_INSTALLED- " + operationResult.getPoints(), Toast.LENGTH_SHORT)
-                //      .show();
-                break;
-
-            case VIDEO_PROGRESS:
-
-                int progressRule = (Integer) operationResult.getResult();
-
-                if (progressRule == OperationResult.VIDEO_COMPLETED_25P) {
-
-                    // Toast.makeText(HomeActivity.this, "Progress completed 25% ",
-                    //       Toast.LENGTH_SHORT).show();
-                } else if (progressRule == OperationResult.VIDEO_COMPLETED_50P) {
-
-//                    Toast.makeText(HomeActivity.this, "Progress completed 50%",
-//                            Toast.LENGTH_SHORT).show();
-
-                } else if (progressRule == OperationResult.VIDEO_COMPLETED_75P) {
-
-                    //    Toast.makeText(HomeActivity.this, "Progress completed 75%",
-                    //           Toast.LENGTH_SHORT).show();
+            case AD_FAILED:
+                // Toast.makeText(HomeActivity.this, "AD FAILED..." + operationResult.getErrorInfo(), Toast.LENGTH_SHORT).show();
+                setLogs("AD FAILED..." + operationResult.getErrorInfo());
+                String errorInfo = operationResult.getErrorInfo().toString();
+                if (errorInfo.equalsIgnoreCase(ERROR_TYPE.INTERNAL_ERROR.toString())) {
+                    Logger.v(TAG, "INTERNAL ERROR");
+                } else if (errorInfo.equalsIgnoreCase(ERROR_TYPE.NO_FILL.toString())) {
+                    Logger.v(TAG, "NO FILL");
+                } else {
+                    Logger.v(TAG, "NO NETWORK AVAILABLE");
                 }
                 break;
-
-
-            case INTERNET_UNAVAILABLE:
-                //  Toast.makeText(HomeActivity.this, "INTERNET_UNAVAILABLE",
-                //          Toast.LENGTH_SHORT).show();
+            case POINTS_REVEALED:
+                // Toast.makeText(HomeActivity.this, "SUCCESSFUL_SHARED_ON_FACEBOOK...",
+                //         Toast.LENGTH_SHORT).show();
+                setLogs("POINTS_REVEALED..." + operationResult.getPoints());
                 break;
 
-            case OFFER_AVAILED_ALREADY:
-
-                // Toast.makeText(HomeActivity.this, "You have already availed the offer!", Toast.LENGTH_SHORT).show();
+            case SUCCESSFUL_SHARED_ON_FACEBOOK:
+                // Toast.makeText(HomeActivity.this, "SUCCESSFUL_SHARED_ON_FACEBOOK...",
+                //         Toast.LENGTH_SHORT).show();
+                setLogs("SUCCESSFUL_SHARED_ON_FACEBOOK...");
                 break;
-
-            case INTERSTITIAL_LOADED:
-                // Toast.makeText(HomeActivity.this, "Interstitial Loaded.......", Toast.LENGTH_SHORT).show();
+            case SUCCESSFUL_SHARED_ON_GOOGLEPLUS:
+                // Toast.makeText(HomeActivity.this, "SUCCESSFUL_SHARED_ON_GOOGLEPLUS...",
+                //         Toast.LENGTH_SHORT).show();
+                setLogs("SUCCESSFUL_SHARED_ON_GOOGLEPLUS...");
                 break;
-
-            case INTERSTITIAL_CLICKED:
-
-                //Toast.makeText(HomeActivity.this, "Interstitial Clicked", Toast.LENGTH_SHORT).show();
+            case SUCCESSFUL_SHARED_ON_TWITTER:
+                // Toast.makeText(HomeActivity.this, "SUCCESSFUL_SHARED_ON_TWITTER...",
+                //        Toast.LENGTH_SHORT).show();
+                setLogs("SUCCESSFUL_SHARED_ON_TWITTER...");
                 break;
-
-            case INTERSTITIAL_CLOSED:
-
-                //  Toast.makeText(HomeActivity.this, "Interstitial Closed" + operationResult.getPoints(), Toast.LENGTH_SHORT).show();
+            case AD_VIEW_CLOSED:
+                // Toast.makeText(HomeActivity.this, "AD_VIEW_CLOSED..." + operationResult.getPoints(), Toast.LENGTH_SHORT).show();
+                setLogs("AD_VIEW_CLOSED..." + operationResult.getPoints());
                 break;
             default:
                 break;
         }
+    }
+
+    public void setLogs(String message) {
+        Logger.v(TAG, message);
     }
 
     @Override

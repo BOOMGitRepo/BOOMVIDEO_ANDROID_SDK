@@ -7,10 +7,10 @@
 
 Follow our [Document](http://boom.boomvideo.tv/alpha/app/integrationdoc/BoomVideo_Android_IntegrationDoc.pdf) to Integrate SDK
 
-Download [Library](AndroidSDK/boomvideo.aar)
+Download [Library](AndroidSDK)
 
 # Supported System
-
+Android : 4.0  above
 
 # Features
 

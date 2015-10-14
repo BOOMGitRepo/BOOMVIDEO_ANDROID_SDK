@@ -2781,6 +2781,7 @@ containing a value of this type.
         public static final int create_calendar_title=0x7f070004;
         public static final int decline=0x7f070003;
         public static final int hello_world=0x7f07003f;
+        public static final int spinner_title=0x7f070041;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
