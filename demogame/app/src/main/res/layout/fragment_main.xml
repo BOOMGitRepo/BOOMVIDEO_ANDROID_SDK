@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/score_layout_width"
+            android:layout_height="wrap_content"
+            android:background="@color/game_container"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Score.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/score" />
+
+            <TextView
+                android:id="@+id/tv_score"
+                style="@style/Text.Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/score_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@color/game_container"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Score.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/best" />
+
+            <TextView
+                android:id="@+id/tv_score_best"
+                style="@style/Text.Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/score_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:background="@color/game_container"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Score.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/swipes" />
+
+            <TextView
+                android:id="@+id/tv_swipes"
+                style="@style/Text.Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/game_container"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/grid_container_0_1"
+                style="@style/Layout.Cell"
+                android:layout_marginLeft="@dimen/cell_padding_large"
+                android:layout_marginTop="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_0_2"
+                style="@style/Layout.Cell"
+                android:layout_marginTop="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_0_3"
+                style="@style/Layout.Cell"
+                android:layout_marginTop="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_0_4"
+                style="@style/Layout.Cell"
+                android:layout_marginRight="@dimen/cell_padding_large"
+                android:layout_marginTop="@dimen/cell_padding_large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/grid_container_1_1"
+                style="@style/Layout.Cell"
+                android:layout_marginLeft="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_1_2"
+                style="@style/Layout.Cell" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_1_3"
+                style="@style/Layout.Cell" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_1_4"
+                style="@style/Layout.Cell"
+                android:layout_marginRight="@dimen/cell_padding_large" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/grid_container_2_1"
+                style="@style/Layout.Cell"
+                android:layout_marginLeft="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_2_2"
+                style="@style/Layout.Cell" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_2_3"
+                style="@style/Layout.Cell" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_2_4"
+                style="@style/Layout.Cell"
+                android:layout_marginRight="@dimen/cell_padding_large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/grid_container_3_1"
+                style="@style/Layout.Cell"
+                android:layout_marginBottom="@dimen/cell_padding_large"
+                android:layout_marginLeft="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_3_2"
+                style="@style/Layout.Cell"
+                android:layout_marginBottom="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_3_3"
+                style="@style/Layout.Cell"
+                android:layout_marginBottom="@dimen/cell_padding_large" />
+
+            <FrameLayout
+                android:id="@+id/grid_container_3_4"
+                style="@style/Layout.Cell"
+                android:layout_marginBottom="@dimen/cell_padding_large" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/asa_game_list_selector_holo_light"
+        android:padding="4dp"
+        android:text="@string/restart"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+</LinearLayout>

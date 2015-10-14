@@ -1,7 +1,11 @@
 
 #Demo App
 Android Studio: Download package [demoapp_AS](demoapp_AS)
+
 Eclipse: Download package [demoapp_eclipse](demoapp_eclipse)
+
+Demo with game for Android Studio: Download package [demogame](demogame)
+
 
 # Get Started
 
