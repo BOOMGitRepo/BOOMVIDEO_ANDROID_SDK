@@ -9,14 +9,12 @@ Demo with game for Android Studio: Download package [demogame](demogame)
 
 # Get Started
 
-Follow our [Document](http://boom.boomvideo.tv/alpha/app/integrationdoc/BoomVideo_Android_IntegrationDoc.pdf) to Integrate SDK
+Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/205571105) to Integrate SDK
 
 Download [Library](AndroidSDK)
 
 # Supported System
 Android : 4.0  above
-
-# Features
 
 # SDK Change Log
 Check SDK [Change Log](CHANGELOG.txt)
