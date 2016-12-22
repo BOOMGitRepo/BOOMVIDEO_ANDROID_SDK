@@ -1,7 +1,7 @@
 
 # Get Started
 -Preroll Ads
-Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/205571105) to Integrate SDK
+Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/115000120126) to Integrate SDK
 
 -Native Ads
 Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/115000120106) to Integrate SDK
