@@ -1,20 +1,15 @@
 
-#Demo App
-Android Studio: Download package [demoapp_AS](demoapp_AS)
-
-Eclipse: Download package [demoapp_eclipse](demoapp_eclipse)
-
-Demo with game for Android Studio: Download package [demogame](demogame)
-
-
 # Get Started
-
+-Preroll Ads
 Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/205571105) to Integrate SDK
+
+-Native Ads
+Follow our [Document](https://boomcollective.zendesk.com/hc/en-us/articles/115000120106) to Integrate SDK
 
 Download [Library](AndroidSDK)
 
 # Supported System
-Android : 4.0  above
+1. Minimum Target Android API Level 15 (4.0.3 Ice Cream Sandwich)2. Google Play Services3. Picasso-2.5.2.jar library
 
 # SDK Change Log
 Check SDK [Change Log](CHANGELOG.txt)
